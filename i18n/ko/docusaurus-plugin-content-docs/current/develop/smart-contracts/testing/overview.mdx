@@ -1,0 +1,106 @@
+# Blueprint를 사용하여 테스트 작성
+
+## 개요
+
+테스트 툴킷(일반적으로 샌드박스)은 [Blueprint](/develop/smart-contracts/sdk/javascript)라고 불리는 TypeScript SDK에 이미 포함되어 있습니다. 데모 프로젝트를 만들고 기본 테스트를 실행하려면 다음 두 단계를 따를 수 있습니다:
+
+1. 새로운 Blueprint 프로젝트 생성:
+
+```bash
+npm create ton@latest MyProject
+```
+
+2. 테스트 실행:
+
+```bash
+cd MyProject
+npx blueprint test
+```
+
+결과적으로 터미널 창에서 해당 출력을 볼 수 있습니다:
+
+```bash
+% npx blueprint test
+
+> MyProject@0.0.1 test
+> jest
+
+ PASS  tests/Main.spec.ts
+  Main
+    ✓ should deploy (127 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        1.224 s, estimated 2 s
+Ran all test suites.
+```
+
+## 기본 사용법
+
+스마트 계약의 테스트는 보안 범위, 가스 소비의 최적화 및 엣지 케이스의 조사를 가능하게 합니다. Blueprint에서 테스트 작성(이것은 [Sandbox](https://github.com/ton-org/sandbox)를 기반으로 합니다)은 계약과 관련된 임의의 작업을 정의하고 그 결과를 예상 결과와 비교하여 수행됩니다. 예를 들어:
+
+```typescript
+it("should execute with success", async () => {
+  // 테스트 케이스 설명
+  const res = await main.sendMessage(sender.getSender(), toNano("0.05")); // 계약 main을 사용하여 작업을 수행하고 결과를 res에 저장
+
+  expect(res.transactions).toHaveTransaction({
+    // expect() 함수를 사용하여 예상 결과를 구성
+    from: main.address, // 테스트할 트랜잭션의 예상 발신자를 설정
+    success: true, // success 매처 속성을 사용하여 원하는 결과를 설정
+  });
+
+  printTransactionFees(res.transactions); // 소비된 수수료에 대한 자세한 내용이 포함된 테이블을 출력
+});
+```
+
+### 복잡한 Assertion을 위한 테스트 작성
+
+테스트를 만드는 기본적인 워크플로우는 다음과 같습니다:
+
+1. `blockchain.openContract()`를 사용하여 특정한 래핑된 `Contract` 엔터티를 만듭니다.
+2. 계약이 수행해야 하는 작업을 설명하고 실행 결과를 `res` 변수에 저장합니다.
+3. `expect()` 함수와 `toHaveTransaction()` 매처를 사용하여 속성을 확인합니다.
+
+`toHaveTransaction` 매처는 다음 속성을 사용하여 정의된 `FlatTransaction` 유형의 필드를 가진 객체를 예상합니다.
+
+| 이름    | 유형     | 설명                                                                                                                                                  |
+| ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| from    | Address? | 메시지 발신자의 계약 주소                                                                                                                             |
+| on      | Address  | 메시지 대상 계약의 계약 주소 (속성 `to`의 대체 이름)                                                                                                  |
+| value   | bigint?  | 메시지 내의 톤코인 금액(나노톤)                                                                                                                       |
+| body    | Cell     | 셀로 정의된 메시지 본문                                                                                                                               |
+| op      | number?  | 오퍼레이션 코드는 일반적으로 TL-B에서 가져온 작업 식별자 번호(crc32)입니다. 메시지 본문의 첫 32비트에 예상됩니다.                                     |
+| success | boolean? | 특정 트랜잭션의 결과 상태를 정의하는 사용자 정의 샌드박스 플래그입니다. True는 연산 및 작업 단계가 모두 성공한 경우입니다. 그렇지 않으면 False입니다. |
+
+관심 없는 필드는 무시할 수 있으며, 함수를 전달하여 해당 유형을 받고 부울(`true`는 좋음)을 반환하도록하여 예를 들어 숫자 범위, 메시지 옵코드 등을 확인할 수 있습니다. 그러나 필드가 선택적인 경우(`from?: Address`와 같은) 함수가 선택적인 유형을 수용해야 함을 유의하십시오.
+
+:::tip
+[Sandbox 문서](https://github.com/ton-org/sandbox#test-a-transaction-with-matcher)에서 매처 필드의 전체 목록을 확인하세요.
+:::
+
+## 자습서
+
+TON 커뮤니티에서 제공하는 가장 유용한 커뮤니티 자습서를 통해 테스트에 대해 더 알아보세요:
+
+- [Lesson 2: Testing FunC for a Smart Contract](https://github.com/romanovichim/TonFunClessons_Eng/blob/main/lessons/smartcontract/2lesson/secondlesson.md)
+- [TON Hello World part 4: Step by step guide for testing your first smart contract](https://ton-community.github.io/tutorials/04-testing/)
+- [TON Smart Contract Pipeline](https://dev.to/roma_i_m/ton-smart-contract-pipeline-write-simple-contract-and-compile-it-4pnh)
+- [[YouTube] Sixth lesson FunC & Blueprint. Gas, fees, tests.](https://youtu.be/3XIpKZ6wNcg)
+
+## 예제
+
+TON 생태계 계약에 사용되는 테스트 스위트를 확인하고 예제로 배우세요.
+
+- [liquid-staking-contract 샌드박스 테스트](https://github.com/ton-blockchain/liquid-staking-contract/tree/main/tests)
+- [governance_tests](https://github.com/Trinketer22/governance_tests/blob/master/config_tests/tests/)
+- [JettonWallet.spec.ts](https://github.com/EmelyanenkoK/modern_jetton/blob/master/tests/JettonWallet.spec.ts)
+- [governance_tests](https://github.com/Trinketer22/governance_tests/blob/master/elector_tests/tests/complaint-test.fc)
+- [MassSender.spec.ts](https://github.com/Gusarich/ton-mass-sender/blob/main/tests/MassSender.spec.ts)
+- [TonForwarder.spec.ts](https://github.com/TrueCarry/ton-contract-forwarder/blob/main/src/contracts/ton-forwarder/TonForwarder.spec.ts)
+
+## 관련 정보
+
+- [Blueprint](/develop/smart-contracts/sdk/javascript)
+- [toncli](/develop/smart-contracts/testing/toncli)

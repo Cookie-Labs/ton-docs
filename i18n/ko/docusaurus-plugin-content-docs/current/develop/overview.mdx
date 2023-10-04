@@ -1,0 +1,113 @@
+import Button from "@site/src/components/button";
+import Player from "@site/src/components/player";
+
+# TON 문서
+
+TON 블록체인 개발 공식 문서에 오신 것을 환영합니다!
+
+이 자료는 TON 블록체인에서 응용 프로그램을 개발, 테스트 및 배포하기 위해 필요한 모든 정보를 제공하는 것을 목표로 합니다.
+
+이것은 협력적인 오픈 소스 프로젝트이며 기여는 언제나 환영합니다. 모든 문서는 GitHub을 통해 편집할 수 있으며, [이 지침](/contribute)을 따르면 됩니다.
+
+- *TON 시작하기*는 TON 블록체인과 상호 작용하는 단계별 가이드입니다. (비디오 튜토리얼 포함)
+- _TON Hello World_ 시리즈는 지갑, 스마트 계약, 미니 앱 및 TON에서 스마트 계약을 테스트하고 디버그하는 방법에 대한 자세한 단계별 가이드를 제공합니다.
+
+<Button
+  href="/develop/get-started-with-ton"
+  colorType={"primary"}
+  sizeType={"sm"}
+>
+  TON 시작하기
+</Button>
+<Button
+  href="https://ton-community.github.io/tutorials/01-wallet/"
+  colorType="secondary"
+  sizeType={"sm"}
+>
+  TON Hello World
+</Button>
+
+## 개발 모듈
+
+TON 블록체인 개발이 처음이라면 처음부터 시작하여 다음 주제를 순서대로 공부하는 것이 좋습니다.
+
+### 기본 개념
+
+- [오픈 네트워크](/learn/introduction) - TON 블록체인에 대한 고수준 개요.
+- [블록체인의 블록체인](/learn/overviews/ton-blockchain) - TON 블록체인에 대한 실용적인 설명.
+- [스마트 계약 주소](/learn/overviews/addresses) - 주소에 대한 상세한 설명.
+- [데이터 구조로서의 셀](/learn/overviews/cells) - 데이터 구조에 대한 고수준 설명.
+- [TON 네트워킹](/learn/networking/overview) - TON 피어 투 피어 프로토콜에 대한 고수준 개요.
+- [TON 가상 머신 (TVM)](/learn/tvm-instructions/tvm-overview) - TON 가상 머신에 대한 고수준 개요.
+  - [트랜잭션 및 단계](/learn/tvm-instructions/tvm-overview#transactions-and-phases) - 트랜잭션 및 단계에 대한 상세한 설명.
+- [트랜잭션 수수료](/develop/smart-contracts/fees) - 트랜잭션 수수료에 대한 고수준 설명.
+
+### 인프라
+
+- [노드 유형](/participate/nodes/node-types) - 노드 유형에 대한 상세한 설명.
+- [풀 노드 실행](/participate/run-nodes/full-node) - 노드 실행 방법에 대한 상세한 설명.
+- [TON DNS 및 사이트](/participate/web3/dns) - TON DNS 및 사이트에 대한 상세한 설명.
+- [TON 스토리지](/participate/ton-storage/storage-daemon) - TON 스토리지에 대한 상세한 설명.
+
+### 추가 리소스
+
+- [**FAQ**](/develop/howto/faq) - 자주 묻는 질문
+- [FunC 문서](/develop/func/overview)
+- [Fift 문서](/develop/fift/overview)
+
+## 스마트 계약 개발
+
+스마트 계약은 TON 블록체인의 분산 응용 프로그램 (DApp)의 구성 요소입니다. 자신의 DApp을 개발하려면 스마트 계약이 어떻게 작동하는지 이해하는 것이 중요합니다.
+
+<Button href="/develop/smart-contracts/" colorType="primary" sizeType={"sm"}>
+  시작하기
+</Button>
+<Button
+  href="/develop/smart-contracts/sdk/javascript"
+  colorType={"secondary"}
+  sizeType={"sm"}
+>
+  Blueprint 사용
+</Button>
+
+<br></br>
+<br></br>
+
+다음 리소스는 TON 스마트 계약 개발에 유용한 정보를 제공합니다.
+
+- [TON Hello World: 첫 번째 스마트 계약 작성을 위한 단계별 가이드](https://ton-community.github.io/tutorials/02-contract/) - JS로 기초 사항을 명확하게 설명한 자료.
+- [지갑 스마트 계약 사용 방법](/develop/smart-contracts/tutorials/wallet) - JS와 GO를 사용하여 스마트 계약 기본 사항에 대한 자세하고 주의 깊은 설명.
+- [예제로 배우는 스마트 계약](/develop/smart-contracts/examples) (FunC, Fift)
+
+## DApp 개발
+
+분산 응용 프로그램 (DApp)은 하나의 컴퓨터가 아닌 컴퓨터 피어 투 피어 네트워크에서 실행되는 응용 프로그램입니다 (TON 블록체인). 이것들은 전통적인 웹 애플리케이션과 유사하지만 블록체인 네트워크 위에 구축됩니다. 즉, DApp은 분산되어 하나의 엔터티가 제어하지 않는다는 것을 의미합니다.
+
+<Button href="/develop/dapps/" colorType={"primary"} sizeType={"sm"}>
+  시작하기
+</Button>
+
+### DeFi 개발
+
+- [TON Connect](/develop/dapps/ton-connect/overview) — DApp을 위한 통합 및 인증.
+- [오프체인 결제 처리](/develop/dapps/asset-processing) — 결제 처리에 대한 예제 및 개념.
+- [TON Jetton 처리](/develop/dapps/asset-processing/jettons) — Jetton 처리에 대한 예제 및 개념.
+- [Fungible (FT) / Non-fungible (NFT) 토큰](/develop/dapps/defi/tokens) — 스마트 계약, 예제, 도구
+
+포괄적인 DApp 빌딩 가이드로 DApp 개발의 첫 걸음을 내딛어보세요:
+
+- [TON Hello World: 첫 번째 웹 클라이언트 빌드를 위한 단계별 가이드](https://ton-community.github.io/tutorials/03-client/)
+- [TON Connect를 통한 Telegram 봇 통합](/develop/dapps/ton-connect/tg-bot-integration)
+
+### SDK 및 예제
+
+- [API](/develop/dapps/apis)
+- [SDK](/develop/dapps/apis/sdk)
+
+## TON 교육 허브
+
+- [교육](https://github.com/ton-community/awesome-ton#-education) - TON 커뮤니티에서 정성스럽게 제작한 다양한 교육 자료의 포괄적인 목록을 확인하세요.
+
+## 자주 묻는 질문
+
+[Frequently Asked Questions](/develop/howto/faq) 섹션으로 이동하세요.

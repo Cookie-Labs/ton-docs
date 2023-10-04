@@ -1,30 +1,30 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "다음",
     "description": "The label for version current"
   },
   "sidebar.learn.category.TON Blockchain": {
-    "message": "TON Blockchain",
+    "message": "TON 블록체인",
     "description": "The label for category TON Blockchain in sidebar learn"
   },
   "sidebar.learn.category.TON Virtual Machine (TVM)": {
-    "message": "TON Virtual Machine (TVM)",
+    "message": "TON 가상머신 (TVM)",
     "description": "The label for category TON Virtual Machine (TVM) in sidebar learn"
   },
   "sidebar.learn.category.TL-B Language": {
-    "message": "TL-B Language",
+    "message": "TL-B 언어",
     "description": "The label for category TL-B Language in sidebar learn"
   },
   "sidebar.learn.category.TON Networking": {
-    "message": "TON Networking",
+    "message": "TON 네트워킹",
     "description": "The label for category TON Networking in sidebar learn"
   },
   "sidebar.learn.category.ADNL Protocol": {
-    "message": "ADNL Protocol",
+    "message": "ADNL 프로토콜",
     "description": "The label for category ADNL Protocol in sidebar learn"
   },
   "sidebar.learn.category.TON Services": {
-    "message": "TON Services",
+    "message": "TON 서비스",
     "description": "The label for category TON Services in sidebar learn"
   },
   "sidebar.learn.category.TON Whitepapers": {
@@ -32,11 +32,11 @@
     "description": "The label for category TON Whitepapers in sidebar learn"
   },
   "sidebar.learn.link.TON Compared to Other L1s": {
-    "message": "TON Compared to Other L1s",
+    "message": "다른 L1과 비교한 TON",
     "description": "The label for link TON Compared to Other L1s in sidebar learn, linking to https://ton.org/analysis"
   },
   "sidebar.learn.link.Open-Source and Decentralization in TON": {
-    "message": "Open-Source and Decentralization in TON",
+    "message": "TON의 오픈소스와 탈중앙화",
     "description": "The label for link Open-Source and Decentralization in TON in sidebar learn, linking to https://defi.org/ton/"
   },
   "sidebar.learn.link.TON": {
@@ -56,7 +56,7 @@
     "description": "The label for link Catchain Consensus Protocol in sidebar learn, linking to https://ton.org/catchain.pdf"
   },
   "sidebar.learn.doc.Overview": {
-    "message": "Overview",
+    "message": "개요",
     "description": "The label for the doc item Overview in sidebar learn, linking to the doc learn/docs"
   },
   "sidebar.learn.doc.TON DNS": {
@@ -152,11 +152,11 @@
     "description": "The label for link How to shard your TON smart contract and why in sidebar develop, linking to https://blog.ton.org/how-to-shard-your-ton-smart-contract-and-why-studying-the-anatomy-of-tons-jettons"
   },
   "sidebar.develop.link.TON Concepts": {
-    "message": "TON Concepts",
+    "message": "TON 개념",
     "description": "The label for link TON Concepts in sidebar develop, linking to /learn/introduction"
   },
   "sidebar.develop.link.TON Services": {
-    "message": "TON Services",
+    "message": "TON 서비스",
     "description": "The label for link TON Services in sidebar develop, linking to /learn/services/payments"
   },
   "sidebar.develop.link.TON Whitepapers": {

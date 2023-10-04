@@ -1,0 +1,138 @@
+import Button from "@site/src/components/button";
+
+# 소개
+
+TON 블록체인에서 스마트 계약 생성, 개발 및 배포는 [FunC 프로그래밍 언어](/develop/smart-contracts/#func-language)와 [TON 가상 머신 (TVM)](/develop/smart-contracts/#ton-virtual-machine)을 활용합니다.
+
+## 빠른 시작: 첫 번째 스마트 계약
+
+_Blueprint_ 프레임워크를 사용하여 첫 번째 스마트 계약을 작성하고 배포하세요.
+
+Blueprint는 스마트 계약을 작성, 테스트 및 배포하는 개발 환경입니다.
+새 데모 프로젝트를 만들려면 다음 명령을 사용하세요:
+
+```bash
+npm create ton@latest
+```
+
+<Button
+  href="/develop/smart-contracts/sdk/javascript"
+  colorType="primary"
+  sizeType={"sm"}
+>
+  더 자세히 알아보기
+</Button>
+<Button
+  href="https://www.youtube.com/watch?v=7omBDfSqGfA&list=PLtUBO1QNEKwtO_zSyLj-axPzc9O9rkmYa"
+  colorType={"secondary"}
+  sizeType={"sm"}
+>
+  비디오 튜토리얼 시청
+</Button>
+
+## 시작하기
+
+### 쉽고 재미있는 자습서
+
+초보자 친화적인 가이드로 여정을 시작하세요:
+
+- [TON Hello World: 첫 번째 스마트 계약 작성 단계별 안내](https://ton-community.github.io/tutorials/02-contract/)
+
+### 포괄적인 가이드
+
+자세하고 세세한 내용을 선호하는 경우 다음을 방문하세요:
+
+- [지갑 스마트 계약 사용 방법](/develop/smart-contracts/tutorials/wallet)
+
+## 스마트 계약 예제
+
+TON 커뮤니티에서 제공하는 준비된 스마트 계약 예제 및 도구를 살펴보세요.
+
+:::info 작은 팁
+*FunC*를 사용하여 작성된 스마트 계약에 중점을 두십시오. 종종 낮은 수준의 Fift (_.fif) 언어 대신 FunC (_.fc) 언어를 사용하여 작성된 스마트 계약에 중점을 두는 것이 좋습니다.
+:::
+
+TON에서 제공하는 스마트 계약의 표준 예제로는 지갑, 선거인 (TON에서 검증을 관리하는 역할), 다중 서명 지갑 등을 참고할 수 있습니다.
+
+<Button
+  href="/develop/smart-contracts/examples"
+  colorType={"primary"}
+  sizeType={"sm"}
+>
+  예제 열기
+</Button>
+
+## 스마트 계약 모범 사례
+
+TON은 끝없는 가능성을 제공합니다. 권장 지침을 준수하면서 최대한 활용하는 방법을 배우세요.
+
+- [스마트 계약 가이드라인](/develop/smart-contracts/guidelines)
+
+## TON 가상 머신 (TVM)
+
+스마트 계약을 실행하는 엔진을 발견하세요.
+
+- [TVM 개요](/learn/tvm-instructions/tvm-overview)
+
+## 프로그래밍 언어
+
+### 📘 FunC
+
+TON 스마트 계약을 위한 맞춤 언어입니다.
+
+<Button href="/develop/func/overview" colorType={"primary"} sizeType={"sm"}>
+  FunC 개요
+</Button>
+
+### 📒 Tact
+
+TypeScript 및 Rust와 유사한 TON 스마트 계약을 위한 고급 언어입니다.
+
+:::caution
+커뮤니티에서 개발되었습니다. 주의해서 사용하세요.
+:::
+
+<Button
+  href="https://docs.tact-lang.org/"
+  colorType={"primary"}
+  sizeType={"sm"}
+>
+  Tact 공식 사이트
+</Button>
+<Button
+  href="https://tact-by-example.org/"
+  colorType="secondary"
+  sizeType={"sm"}
+>
+  Tact Hello World
+</Button>
+
+### 📕 Fift (고급)
+
+:::caution 고급 수준
+용감한 이용자를 위한 것입니다!
+:::
+
+<Button href="/develop/fift/overview" colorType={"primary"} sizeType={"sm"}>
+  Fift 개요
+</Button>
+
+## 커뮤니티 도구
+
+- [disintar/toncli](/develop/smart-contracts/sdk/toncli) — toncli는 FunC 계약을 빌드, 배포 및 테스트하는 데 사용되는 명령줄 인터페이스입니다.
+- [MyLocalTON](/participate/run-nodes/local-ton) — MyLocalTON은 로컬 환경에서 개인용 TON 블록체인을 실행하는 데 사용됩니다.
+- [tonwhales.com/tools/boc](https://tonwhales.com/tools/boc) — BOC parser.
+- [tonwhales.com/tools/introspection-id](https://tonwhales.com/tools/introspection-id) — crc32 생성기.
+- [@orbs-network/ton-access](https://www.orbs.com/ton-access/) — 분산형 API 게이트웨이.
+
+## 더 읽어보기
+
+커뮤니티 기반 교육 자원을 활용하여 스킬을 향상하세요.
+
+- [TON FunC 학습 경로](https://blog.ton.org/func-journey) ([러시아어 버전](https://github.com/romanovichim/TonFunClessons_ru))
+- [YouTube 튜토리얼](https://www.youtube.com/@TONDevStudy) [[러시아어 버전]](https://www.youtube.com/@WikiMar)
+
+## 추가 자료
+
+- [블록체인이란 무엇인가요? 스마트 계약이란 무엇인가요? 가스란 무엇인가요?](https://blog.ton.org/what-is-blockchain)
+- [트랜잭션 수수료 이해하기](/develop/smart-contracts/fees#how-to-calculate-fees)
